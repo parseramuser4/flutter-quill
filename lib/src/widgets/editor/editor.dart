@@ -305,19 +305,24 @@ class QuillEditorState extends State<QuillEditor>
           )
         : child;
 
-/*    if (isWeb()) {
+    if (isWeb()) {
       // Intercept RawKeyEvent on Web to prevent it from propagating to parents
       // that might interfere with the editor key behavior, such as
       // SingleChildScrollView. Thanks to @wliumelb for the workaround.
       // See issue https://github.com/singerdmx/flutter-quill/issues/304
       return KeyboardListener(
-        onKeyEvent: (_) {},
+        onKeyEvent: (_) {
+          print("onKeyEvent:$_");
+        },
         focusNode: FocusNode(
-          onKeyEvent: (node, event) => KeyEventResult.skipRemainingHandlers,
+          onKeyEvent: (node, event){
+            print("FocusNode onKeyEvent:$event");
+            return KeyEventResult.skipRemainingHandlers;
+          },
         ),
         child: editor,
       );
-    }*/
+    }
 
     return editor;
   }
