@@ -303,7 +303,7 @@ class QuillEditorState extends State<QuillEditor>
           )
         : child;
 
-    if (isWeb()) {
+/*    if (isWeb()) {
       // Intercept RawKeyEvent on Web to prevent it from propagating to parents
       // that might interfere with the editor key behavior, such as
       // SingleChildScrollView. Thanks to @wliumelb for the workaround.
@@ -315,7 +315,7 @@ class QuillEditorState extends State<QuillEditor>
         ),
         child: editor,
       );
-    }
+    }*/
 
     return editor;
   }
