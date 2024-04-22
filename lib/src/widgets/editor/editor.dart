@@ -219,7 +219,9 @@ class QuillEditorState extends State<QuillEditor>
 
     final showSelectionToolbar = configurations.enableInteractiveSelection &&
         configurations.enableSelectionToolbar;
-
+      
+    print("focusNode.debugLabel:${widget.focusNode.debugLabel}");
+      
     final child = FlutterQuillLocalizationsWidget(
       child: QuillEditorProvider(
         editorConfigurations: configurations,
